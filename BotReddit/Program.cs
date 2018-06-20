@@ -10,19 +10,24 @@ namespace BotReddit
     {
         public static void Main(string[] args)
         {
-            var options = new ChromeOptions();
-            options.AddArguments("--disable-gpu");
+             var options = new ChromeOptions();
+             options.AddArguments("--disable-gpu");
 
             var chromeDriver = new ChromeDriver();
-            chromeDriver.Navigate().GoToUrl("http://reddit.com");
+            chromeDriver.Navigate().GoToUrl("https://old.reddit.com/");
             //chromeDriver.FindElementByXPath("//input[@id='login']").Click();
-            chromeDriver.FindElementByXPath("//input[@id='search']").Click();
-            //chromeDriver.FindElementByXPath("//*[@id_\"search\"]/input[1]").Click();
-            chromeDriver.Keyboard.SendKeys("test");
-            chromeDriver.Keyboard.SendKeys(Keys.Enter);
+            //chromeDriver.FindElementByXPath("//input[@id='search']").Click();
+
+
+             chromeDriver.FindElementByXPath("//input*[@id='search']").Click();
+             chromeDriver.Keyboard.SendKeys("test");
+             chromeDriver.Keyboard.SendKeys(Keys.Enter);
 
                 Console.WriteLine("Hello Reddit!");
 
         }
     }
 }
+//*[@id="search"]
+
+//*[@id="search"]/input[1]
